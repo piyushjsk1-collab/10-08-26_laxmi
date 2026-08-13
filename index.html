@@ -46,7 +46,7 @@ html, body {
 
 body { line-height: 1.5; }
 
-/* MAIN CONTAINER (SLIM LANDING PAGE FOCUS) */
+/* MAIN CONTAINER */
 .page-wrapper {
   max-width: 650px;
   margin: 0 auto;
@@ -57,7 +57,7 @@ body { line-height: 1.5; }
   flex-direction: column;
 }
 
-/* TOP HEADER / BRAND BAR */
+/* HEADER */
 header {
   padding: 16px 20px;
   background: var(--bg-dark);
@@ -103,11 +103,30 @@ header {
   gap: 5px;
 }
 
-/* HERO TOP CARD & CTA (TOP BUTTON LAYOUT) */
+/* HERO SECTION WITH IMAGE BANNER */
 .hero-cta-section {
-  padding: 24px 20px;
+  padding: 20px;
   text-align: center;
   background: #ffffff;
+}
+
+.hero-image-box {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  display: block;
+  text-decoration: none;
+}
+
+.hero-image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 280px;
 }
 
 .hero-tag {
@@ -120,16 +139,16 @@ header {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .hero-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   color: var(--bg-dark);
   line-height: 1.25;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .hero-title span {
@@ -137,20 +156,20 @@ header {
 }
 
 .hero-desc {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-/* MAIN BIG TOP BUTTON */
+/* MAIN CTA BUTTON */
 .main-wa-btn {
   text-decoration: none;
   background: var(--accent-green);
   color: #ffffff;
   width: 100%;
-  padding: 16px;
+  padding: 15px;
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -158,7 +177,7 @@ header {
   gap: 10px;
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
   transition: 0.3s;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .main-wa-btn:hover {
@@ -181,16 +200,16 @@ header {
   gap: 4px;
 }
 
-/* QUICK HIGHLIGHT CARDS */
+/* INFO SECTION */
 .info-section {
   padding: 0 20px 24px;
 }
 
 .section-label {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--bg-dark);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -199,26 +218,26 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .h-card {
   background: var(--bg-page);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 14px;
+  padding: 12px;
   text-align: left;
 }
 
 .h-card i {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--primary);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: block;
 }
 
 .h-card h4 {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--bg-dark);
 }
@@ -228,13 +247,13 @@ header {
   color: var(--text-muted);
 }
 
-/* BRIEF SERVICES LIST */
+/* BRIEF SERVICES */
 .services-brief {
   background: var(--bg-page);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 18px;
-  margin-bottom: 24px;
+  padding: 16px;
+  margin-bottom: 20px;
 }
 
 .service-row {
@@ -248,16 +267,16 @@ header {
 .service-row:last-child { border-bottom: none; }
 
 .s-icon {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
   border-radius: 8px;
   background: rgba(37, 99, 235, 0.1);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .s-info h5 {
@@ -271,12 +290,11 @@ header {
   color: var(--text-muted);
 }
 
-/* SECOND BOTTOM BUTTON */
 .secondary-btn-wrap {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-/* TERMS AND CONDITIONS SECTION */
+/* TERMS AND CONDITIONS */
 .terms-section {
   background: #ffffff;
   border-top: 1px solid var(--border-color);
@@ -285,10 +303,10 @@ header {
 }
 
 .terms-title {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--bg-dark);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -301,7 +319,7 @@ header {
 }
 
 .terms-content p {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 /* FOOTER */
@@ -334,10 +352,191 @@ footer p { margin-bottom: 4px; }
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
   z-index: 1000;
 }
+
+/* ========================================================
+   POPUP MODAL OVERLAY (WITH IMAGE & 20% OFF BADGE)
+   ======================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 19, 41, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-banner-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: visible;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.modal-overlay.active .modal-banner-card {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 20;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modal-close-btn:hover {
+  background: rgba(239, 68, 68, 0.9);
+}
+
+/* 20% OFF CIRCLE BADGE */
+.badge-circle-20 {
+  position: absolute;
+  top: -18px;
+  left: 16px;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef4444, #f59e0b);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+  border: 3px solid #ffffff;
+  animation: pulseGlow 2s infinite ease-in-out;
+  z-index: 15;
+}
+
+.badge-circle-20 .percent-num { font-size: 16px; line-height: 1; }
+.badge-circle-20 .percent-txt { font-size: 8.5px; text-transform: uppercase; font-weight: 700; }
+
+@keyframes pulseGlow {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.6); }
+  50% { transform: scale(1.08); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.modal-img-wrap {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+}
+
+.modal-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-body {
+  padding: 18px;
+  text-align: center;
+}
+
+.banner-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--bg-dark);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.banner-title span { color: var(--primary); }
+
+.banner-desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.popup-wa-btn {
+  background: var(--accent-green);
+  color: #ffffff;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+}
+
+.banner-subtext {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
 </style>
 </head>
 
 <body>
+
+<div class="modal-overlay" id="autoModal">
+  <div class="modal-banner-card" id="modalCard">
+    <div class="modal-close-btn" id="modalCloseBtn" title="Close">✕</div>
+
+    <div class="badge-circle-20">
+      <span class="percent-num">20%</span>
+      <span class="percent-txt">OFF</span>
+    </div>
+
+    <div class="modal-img-wrap">
+      <img src="image.jpg" alt="Laxmi Logistics Transport Banner">
+    </div>
+
+    <div class="modal-body">
+      <h2 class="banner-title">Special Commercial Offer By <span>Laxmi Logistics</span></h2>
+      <p class="banner-desc">Get Flat 20% Discount on First Commercial Freight Booking!</p>
+
+      <a href="#" data-wa class="popup-wa-btn" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Chat On WhatsApp Now
+      </a>
+
+      <p class="banner-subtext">Clicking anywhere on this card opens WhatsApp</p>
+    </div>
+  </div>
+</div>
 
 <div class="page-wrapper">
 
@@ -352,6 +551,11 @@ footer p { margin-bottom: 4px; }
   </header>
 
   <section class="hero-cta-section">
+    
+    <a href="#" data-wa class="hero-image-box" target="_blank" rel="noopener">
+      <img src="image.jpg" alt="Laxmi Logistics Express Transport Fleet">
+    </a>
+
     <div class="hero-tag">
       <i class="fa-solid fa-truck-fast"></i> Pan-India Express Freight
     </div>
@@ -444,7 +648,7 @@ footer p { margin-bottom: 4px; }
 
   <footer>
     <p>© 2026 Laxmi Logistics. All Rights Reserved.</p>
-    <p>Helpline: +91 81306 82064 | laxmilogistics.in</p>
+    <p>Helpline: +17692639315 | laxmilogistics.in</p>
   </footer>
 
 </div>
@@ -455,13 +659,47 @@ footer p { margin-bottom: 4px; }
 
 <script>
   const phoneNumber = "+17692639315";
-  const message = encodeURIComponent("Hello I Want Servics.");
+  const message = encodeURIComponent("Hello Laxmi Logistics! I want to claim the 20% OFF offer for commercial freight.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
+  // Assign WhatsApp Link to all targets
   document.querySelectorAll("[data-wa]").forEach(function(link) {
     link.href = whatsappUrl;
+  });
+
+  // Modal Popup Logic
+  const autoModal = document.getElementById("autoModal");
+  const modalCard = document.getElementById("modalCard");
+  const modalCloseBtn = document.getElementById("modalCloseBtn");
+
+  // Show Modal On Load
+  window.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function() {
+      autoModal.classList.add("active");
+    }, 200);
+  });
+
+  // Click Modal -> Redirect to WhatsApp
+  modalCard.addEventListener("click", function(e) {
+    if (!e.target.closest("#modalCloseBtn")) {
+      window.open(whatsappUrl, "_blank");
+    }
+  });
+
+  // Close Button Click
+  modalCloseBtn.addEventListener("click", function(e) {
+    e.stopPropagation();
+    autoModal.classList.remove("active");
+  });
+
+  // Overlay Outside Click -> Close
+  autoModal.addEventListener("click", function(e) {
+    if (e.target === autoModal) {
+      autoModal.classList.remove("active");
+    }
   });
 </script>
 
 </body>
-</html>
+  </html>
+  
