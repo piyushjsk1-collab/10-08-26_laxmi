@@ -11,18 +11,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
 <style>
 :root {
-  --bg-page: #f8fafc;
+  --bg-page: #f1f5f9;
   --bg-card: #ffffff;
   --bg-dark: #0b1329;
   --primary: #2563eb;
   --primary-hover: #1d4ed8;
   --accent-cyan: #06b6d4;
   --accent-green: #25D366;
+  --accent-orange: #f97316;
   --text-main: #0f172a;
   --text-muted: #64748b;
   --border-color: #e2e8f0;
@@ -38,26 +38,33 @@
 
 html, body {
   width: 100%;
+  min-height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
   background: var(--bg-page);
   color: var(--text-main);
 }
 
-body { line-height: 1.5; }
+body { 
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* MAIN CONTAINER (SLIM LANDING PAGE FOCUS) */
+/* 100% RESPONSIVE MAIN CONTAINER */
 .page-wrapper {
-  max-width: 650px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 680px;
   min-height: 100vh;
+  margin: 0 auto;
   background: var(--bg-card);
-  box-shadow: 0 0 40px rgba(0,0,0,0.06);
+  box-shadow: 0 0 50px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
 }
 
-/* TOP HEADER / BRAND BAR */
+/* TOP HEADER */
 header {
   padding: 16px 20px;
   background: var(--bg-dark);
@@ -66,6 +73,9 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 3px solid var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .brand-logo {
@@ -103,32 +113,63 @@ header {
   gap: 5px;
 }
 
-/* HERO TOP CARD & CTA (TOP BUTTON LAYOUT) */
+/* HERO SECTION */
 .hero-cta-section {
   padding: 24px 20px;
   text-align: center;
   background: #ffffff;
 }
 
-.hero-tag {
-  background: rgba(37, 99, 235, 0.08);
-  color: var(--primary);
+.hero-offer-badge {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #ffffff;
   font-size: 12px;
-  font-weight: 700;
-  padding: 6px 14px;
+  font-weight: 800;
+  padding: 6px 16px;
   border-radius: 30px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* FULL IMAGE NO-CROP CONTAINER (IMAGE KABHI CUT NAHI HOGI) */
+.hero-image-box {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #0b1329;
+}
+
+.hero-image-box img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain; /* PURI IMAGE DIKHEGI, KAHI SE BHI CUT NAHI HOGI */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.hero-image-box:hover img {
+  transform: scale(1.01);
 }
 
 .hero-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 26px;
+  font-size: 25px;
   font-weight: 800;
   color: var(--bg-dark);
-  line-height: 1.25;
+  line-height: 1.3;
   margin-bottom: 10px;
 }
 
@@ -140,6 +181,7 @@ header {
   font-size: 14px;
   color: var(--text-muted);
   margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 /* MAIN BIG TOP BUTTON */
@@ -158,7 +200,7 @@ header {
   gap: 10px;
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
   transition: 0.3s;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .main-wa-btn:hover {
@@ -167,18 +209,18 @@ header {
 }
 
 .sub-cta-info {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--text-muted);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .sub-cta-info span {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
 
 /* QUICK HIGHLIGHT CARDS */
@@ -224,7 +266,7 @@ header {
 }
 
 .h-card p {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--text-muted);
 }
 
@@ -233,7 +275,7 @@ header {
   background: var(--bg-page);
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 18px;
+  padding: 16px;
   margin-bottom: 24px;
 }
 
@@ -241,33 +283,34 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 0;
+  padding: 12px 0;
   border-bottom: 1px dashed var(--border-color);
 }
 
 .service-row:last-child { border-bottom: none; }
 
 .s-icon {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 10px;
   background: rgba(37, 99, 235, 0.1);
   color: var(--primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .s-info h5 {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   color: var(--bg-dark);
+  margin-bottom: 2px;
 }
 
 .s-info p {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--text-muted);
 }
 
@@ -276,7 +319,7 @@ header {
   margin-bottom: 24px;
 }
 
-/* TERMS AND CONDITIONS SECTION */
+/* TERMS SECTION */
 .terms-section {
   background: #ffffff;
   border-top: 1px solid var(--border-color);
@@ -295,7 +338,7 @@ header {
 }
 
 .terms-content {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -309,8 +352,8 @@ footer {
   background: var(--bg-dark);
   color: #94a3b8;
   text-align: center;
-  padding: 16px 20px;
-  font-size: 11px;
+  padding: 18px 20px;
+  font-size: 11.5px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -319,10 +362,10 @@ footer p { margin-bottom: 4px; }
 /* FLOATING WHATSAPP BUTTON */
 .float-wa {
   position: fixed;
-  right: 16px;
-  bottom: 16px;
-  width: 50px;
-  height: 50px;
+  right: 20px;
+  bottom: 20px;
+  width: 52px;
+  height: 52px;
   background: var(--accent-green);
   color: #fff;
   border-radius: 50%;
@@ -333,6 +376,35 @@ footer p { margin-bottom: 4px; }
   text-decoration: none;
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
   z-index: 1000;
+  transition: transform 0.3s;
+}
+
+.float-wa:hover {
+  transform: scale(1.08);
+}
+
+/* DESKTOP & MOBILE RESPONSIVE TWEAKS */
+@media (min-width: 768px) {
+  body {
+    padding: 30px 16px;
+  }
+  .page-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 22px;
+  }
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .sub-cta-info {
+    flex-direction: column;
+    gap: 6px;
+  }
 }
 </style>
 </head>
@@ -352,16 +424,22 @@ footer p { margin-bottom: 4px; }
   </header>
 
   <section class="hero-cta-section">
-    <div class="hero-tag">
-      <i class="fa-solid fa-truck-fast"></i> Pan-India Express Freight
+    
+    <div class="hero-offer-badge">
+      <i class="fa-solid fa-tag"></i> Special Offer: 5% OFF ON NEW ORDER
     </div>
+
+    <!-- 100% RESPONSIVE IMAGE - AUTO FIT WITHOUT CUTTING -->
+    <a href="#" data-wa class="hero-image-box" target="_blank" rel="noopener" title="Inquire on WhatsApp">
+      <img src="./image.jpeg" alt="Laxmi Logistics Freight Delivery Fleet" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80';">
+    </a>
 
     <h1 class="hero-title">Safe & Fast Cargo Transport By <span>Laxmi Logistics</span></h1>
 
-    <p class="hero-desc">Reliable full truckload (FTL), express commercial dispatches, and warehouse distribution services across India.</p>
+    <p class="hero-desc">Reliable full truckload (FTL), express commercial dispatches, and warehouse distribution services across India. Avail <strong>5% flat discount</strong> on your first booking today.</p>
 
     <a href="#" data-wa class="main-wa-btn" target="_blank" rel="noopener">
-      <i class="fa-brands fa-whatsapp"></i> Calculate Freight & Book Rates
+      <i class="fa-brands fa-whatsapp"></i> Claim 5% Off & Book Now
     </a>
 
     <div class="sub-cta-info">
@@ -385,9 +463,9 @@ footer p { margin-bottom: 4px; }
         <p>Live vehicle telemetry</p>
       </div>
       <div class="h-card">
-        <i class="fa-solid fa-bolt"></i>
-        <h4>Fast Transit</h4>
-        <p>On-time door delivery</p>
+        <i class="fa-solid fa-percent"></i>
+        <h4>5% New User Off</h4>
+        <p>Instant booking discount</p>
       </div>
       <div class="h-card">
         <i class="fa-solid fa-file-invoice"></i>
@@ -436,9 +514,10 @@ footer p { margin-bottom: 4px; }
 
     <div class="terms-content">
       <p><strong>1. Freight Booking:</strong> All transport dispatches and rate quotes confirmed via official WhatsApp or written agreement form binding transport orders with Laxmi Logistics.</p>
-      <p><strong>2. Cargo Restrictions:</strong> Shippers must accurately declare goods. Hazardous materials or illegal contraband without valid statutory transport permits will not be loaded.</p>
-      <p><strong>3. Transit Insurance:</strong> Standard carrier liability applies. Optional transit risk insurance is recommended for high-value cargo before dispatch.</p>
-      <p><strong>4. Ad Compliance:</strong> Laxmi Logistics adheres strictly to Google Ads & Meta advertising guidelines. Material representations reflect genuine transport capabilities.</p>
+      <p><strong>2. Offer Terms:</strong> The 5% discount applies exclusively to new freight orders booked via the official channel.</p>
+      <p><strong>3. Cargo Restrictions:</strong> Shippers must accurately declare goods. Hazardous materials or illegal contraband without valid statutory transport permits will not be loaded.</p>
+      <p><strong>4. Transit Insurance:</strong> Standard carrier liability applies. Optional transit risk insurance is recommended for high-value cargo before dispatch.</p>
+      <p><strong>5. Ad Compliance:</strong> Laxmi Logistics adheres strictly to Google Ads & Meta advertising guidelines. Material representations reflect genuine transport capabilities.</p>
     </div>
   </section>
 
@@ -454,8 +533,8 @@ footer p { margin-bottom: 4px; }
 </a>
 
 <script>
-  const phoneNumber = "+447393922510";
-  const message = encodeURIComponent("Hello I Want Servics.");
+  const phoneNumber = "+917229964589";
+  const message = encodeURIComponent("Hello Laxmi Logistics! I want Services.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   document.querySelectorAll("[data-wa]").forEach(function(link) {
